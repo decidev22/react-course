@@ -1,22 +1,25 @@
+import { Route, Switch } from "react-router-dom";
+import AllMeetupsPage from "./pages/AllMeetUps";
+import NewMeetupPage from "./pages/NewMeetUps";
+import FavoritesPage from "./pages/Favorite";
+import Layout from "./components/layout/Layout";
+
 function App() {
-  return <div></div>;
+  return (
+    <Layout>
+      <Switch>
+        <Route path="/" exact={true}>
+          <AllMeetupsPage />
+        </Route>
+        <Route path="/new-meetup">
+          <NewMeetupPage />
+        </Route>
+        <Route path="/favorite">
+          <FavoritesPage />
+        </Route>
+      </Switch>
+    </Layout>
+  );
 }
 
 export default App;
-
-// import Backdrop from "./components/Backdrop";
-// import Todo from "./components/Todo";
-// import Modal from "./components/Modal";
-
-// function App() {
-//   return (
-//     <div>
-//       <h1>To Dos</h1>
-//       <Todo title="title" />
-//       <Todo title="title2" />
-//       <Todo title="title3" />
-//     </div>
-//   );
-// }
-
-// export default App;
